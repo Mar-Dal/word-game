@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - word game</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<h1>Mots-de-tête 6 lettres</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-9">
+    <div id="row1" class="activeRow row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one activeLetter"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row2" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row3" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row4" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row5" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="row6" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="row7" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row8" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row9" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row10" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row11" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row12" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row13" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row14" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="row15" class="row">
+
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-4"></div> <!-- this column empty -->
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary one"></button> </div>
+          <div class="col-xs-4"> <button type="button" class="btn btn-secondary two"></button> </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary three"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary four"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary five"></button> </div>
+          <div class="col-xs-2"> <button type="button" class="btn btn-secondary six"></button> </div>
+          <div class="col-xs-2"> <div class="correctLetters"></div> </div>
+          <div class="col-xs-2"></div> <!-- this column empty -->
+        </div>
+      </div>
+
+    </div>
+
+  </div> 
+
+  <div id="letters" class="col-xs-3">
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary A">A</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary B">B</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary C">C</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary D">D</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary E">E</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary F">F</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary G">G</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary H">H</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary I">I</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary J">J</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary K">K</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary L">L</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary M">M</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary N">N</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary O">O</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary P">P</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary Q">Q</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary R">R</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary S">S</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary T">T</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary U">U</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary V">V</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary W">W</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary X">X</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary Y">Y</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-secondary Z">Z</button>
+      </div>
+      <div class="col-xs-6">
+        <button type="button" class="effacer">Effacer</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  
+<div id="resultRow"> <span><button id="giveUp">J'abandonne!</button> </span><span id="answer">Réponse:____________</span></div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
